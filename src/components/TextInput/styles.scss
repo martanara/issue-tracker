@@ -1,0 +1,9 @@
+@import "../../styles/settings.scss";
+
+.input {
+    width: 80%;
+    background: $color-white;
+    border: 1px solid $color-black;
+    padding: 15px;
+    border-radius: 5px;
+}

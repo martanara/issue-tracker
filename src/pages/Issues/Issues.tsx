@@ -1,8 +1,8 @@
 import React from "react";
 
+import { AddIssueModal } from "components/AddIssueModal/AddIssueModal";
 import StatusLabel from "components/StatusLabel";
 import Wrapper from "components/Wrapper";
-import Button from "components/Button";
 
 import { useAppContext } from "context";
 
@@ -13,7 +13,7 @@ const Issues = () => {
 
     return (
         <Wrapper>
-            <Button>Add issue</Button>
+            <AddIssueModal />
             {issuesList.length !== 0 ? (
                 <div className="table-container">
                     <table>

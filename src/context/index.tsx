@@ -7,6 +7,10 @@ interface IContextProps {
     children: ReactNode;
 }
 
+interface IAddNewIssueProps {
+    data: IIssue;
+}
+
 export const AppContextProvider = (props: IContextProps) => {
     const { children } = props;
 
@@ -17,7 +21,7 @@ export const AppContextProvider = (props: IContextProps) => {
             reporter: "Mary Collins",
             createdDt: "2023-04-03",
             description: "Please fix asap",
-            status: "open"
+            status: "open",
         },
         {
             id: "2",
@@ -25,7 +29,7 @@ export const AppContextProvider = (props: IContextProps) => {
             reporter: "Bob Stevens",
             createdDt: "2023-04-08",
             description: "Email to be sent out to users who cancelled",
-            status: "pending"
+            status: "pending",
         },
         {
             id: "3",
@@ -33,15 +37,20 @@ export const AppContextProvider = (props: IContextProps) => {
             reporter: "Paul Smith",
             createdDt: "2023-04-13",
             description: "There is an issue with the design of some components",
-            status: "closed"
+            status: "closed",
         },
     ]);
+
+    const addNewIssue = (props: IAddNewIssueProps) => {
+        setIssuesList([...issuesList, { ...props.data }]);
+    };
 
     return (
         <AppContext.Provider
             value={{
                 issuesList,
                 setIssuesList,
+                addNewIssue,
             }}
         >
             {children}
@@ -50,15 +59,17 @@ export const AppContextProvider = (props: IContextProps) => {
 };
 
 export const useAppContext = (): IProps => {
-    const { issuesList, setIssuesList } = useContext(AppContext);
+    const { issuesList, setIssuesList, addNewIssue } = useContext(AppContext);
 
     return {
         issuesList,
         setIssuesList,
+        addNewIssue,
     };
 };
 
 interface IProps {
     issuesList: IIssue[];
     setIssuesList: (arg: IIssue[]) => void;
+    addNewIssue: (arg: IIssue) => void;
 }
