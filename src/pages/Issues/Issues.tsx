@@ -1,8 +1,7 @@
 import React from "react";
 
-import { TbTrash } from "react-icons/tb";
-
 import { AddIssueModal, EditIssueModal } from "components/AddEditIssueModal/AddEditIssueModal";
+import { ConfirmDeleteModal } from "components/ConfirmDeleteModal/ConfirmDeleteModal";
 import StatusLabel from "components/StatusLabel";
 import Wrapper from "components/Wrapper";
 
@@ -11,7 +10,7 @@ import { useAppContext } from "context";
 import "./styles.scss";
 
 const Issues = () => {
-    const { issuesList, deleteIssue } = useAppContext();
+    const { issuesList } = useAppContext();
 
     return (
         <Wrapper>
@@ -48,9 +47,7 @@ const Issues = () => {
                                                 <EditIssueModal editedRecord={issue} />
                                             </td>
                                             <td>
-                                                <div className="action-button" onClick={() => deleteIssue(issue.id)}>
-                                                    <TbTrash />
-                                                </div>
+                                                <ConfirmDeleteModal issueId={issue.id} />
                                             </td>
                                         </tr>
                                     );

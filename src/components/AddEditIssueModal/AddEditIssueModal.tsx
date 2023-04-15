@@ -51,7 +51,7 @@ export const EditIssueModal = (props: IAddIssueModalProps) => {
 
     return (
         <>
-            <div onClick={() => setModalOpen(true)}>
+            <div className={"action-button"} onClick={() => setModalOpen(true)}>
                 <TbEdit />
             </div>
             {modalOpen && (
