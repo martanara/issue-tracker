@@ -1,4 +1,6 @@
-import React, { BaseSyntheticEvent, useState } from "react";
+import React, { BaseSyntheticEvent, useEffect, useState } from "react";
+
+import { TbEdit } from "react-icons/tb";
 
 import TextInput from "components/TextInput/TextInput";
 import TextArea from "components/TextArea/TextArea";
@@ -10,12 +12,15 @@ import { IIssue } from "interfaces";
 
 import "./styles.scss";
 
-interface IAddIssueModalProps {}
+interface IAddIssueModalProps {
+    editedRecord?: IIssue;
+}
 
 interface IModalContent extends IAddIssueModalProps {
     modalOpen: boolean;
     handleToggleModal: (modalState: boolean) => void;
     action: Function;
+    headerText: string;
 }
 
 export const AddIssueModal = (props: IAddIssueModalProps) => {
@@ -32,6 +37,30 @@ export const AddIssueModal = (props: IAddIssueModalProps) => {
                     handleToggleModal={(modalOpen) => setModalOpen(modalOpen)}
                     modalOpen={modalOpen}
                     action={addNewIssue}
+                    headerText="Add new issue"
+                />
+            )}
+        </>
+    );
+};
+
+export const EditIssueModal = (props: IAddIssueModalProps) => {
+    const { editIssue } = useAppContext();
+
+    const [modalOpen, setModalOpen] = useState<boolean>(false);
+
+    return (
+        <>
+            <div onClick={() => setModalOpen(true)}>
+                <TbEdit />
+            </div>
+            {modalOpen && (
+                <ModalContent
+                    {...props}
+                    handleToggleModal={(modalOpen) => setModalOpen(modalOpen)}
+                    modalOpen={modalOpen}
+                    action={editIssue}
+                    headerText="Edit issue"
                 />
             )}
         </>
@@ -39,9 +68,13 @@ export const AddIssueModal = (props: IAddIssueModalProps) => {
 };
 
 export const ModalContent = (props: IModalContent) => {
-    const { handleToggleModal, action } = props;
+    const { handleToggleModal, action, editedRecord, headerText } = props;
 
     const [data, setData] = useState<IIssue>({ status: "open", createdDt: formatDate(new Date()) } as IIssue);
+
+    useEffect(() => {
+        editedRecord && setData(editedRecord);
+    }, [editedRecord]);
 
     const handleCloseModal = () => handleToggleModal(false);
 
@@ -61,9 +94,15 @@ export const ModalContent = (props: IModalContent) => {
     return (
         <div className="modal">
             <div className="modal-content">
-                <div className="modal-header"></div>
+                <div className="modal-header">{headerText}</div>
                 <TextInput placeholder="Title" name="title" labelText="Title" value={data?.title} onChange={handleChangeState} />
-                <TextInput placeholder="Reporter" name="reporter" labelText="Reporter" value={data?.reporter} onChange={handleChangeState} />
+                <TextInput
+                    placeholder="Reporter"
+                    name="reporter"
+                    labelText="Reporter"
+                    value={data?.reporter}
+                    onChange={handleChangeState}
+                />
                 <TextArea
                     placeholder="Description"
                     name="description"

@@ -1,14 +1,14 @@
 import React from "react";
 
-import { TbEdit, TbTrash } from "react-icons/tb";
+import { TbTrash } from "react-icons/tb";
 
-import { AddIssueModal } from "components/AddIssueModal/AddIssueModal";
+import { AddIssueModal, EditIssueModal } from "components/AddEditIssueModal/AddEditIssueModal";
 import StatusLabel from "components/StatusLabel";
 import Wrapper from "components/Wrapper";
 
 import { useAppContext } from "context";
-import "./styles.scss";
 
+import "./styles.scss";
 
 const Issues = () => {
     const { issuesList, deleteIssue } = useAppContext();
@@ -34,23 +34,21 @@ const Issues = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {issuesList.map((item) => {
+                                {issuesList.map((issue) => {
                                     return (
-                                        <tr key={item.id}>
-                                            <td>{item.title}</td>
-                                            <td>{item.reporter}</td>
-                                            <td>{item.createdDt}</td>
-                                            <td>{item.description}</td>
+                                        <tr key={issue.id}>
+                                            <td>{issue.title}</td>
+                                            <td>{issue.reporter}</td>
+                                            <td>{issue.createdDt}</td>
+                                            <td>{issue.description}</td>
                                             <td>
-                                                <StatusLabel status={item.status} />
+                                                <StatusLabel status={issue.status} />
                                             </td>
                                             <td>
-                                                <div className="action-button" onClick={() => console.log("click")}>
-                                                    <TbEdit />
-                                                </div>
+                                                <EditIssueModal editedRecord={issue} />
                                             </td>
                                             <td>
-                                                <div className="action-button" onClick={() => deleteIssue(item.id)}>
+                                                <div className="action-button" onClick={() => deleteIssue(issue.id)}>
                                                     <TbTrash />
                                                 </div>
                                             </td>

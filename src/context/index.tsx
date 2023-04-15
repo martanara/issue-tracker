@@ -14,6 +14,10 @@ interface IAddNewIssueProps {
     data: IIssue;
 }
 
+interface IEditIssueProps {
+    data: IIssue;
+}
+
 export const AppContextProvider = (props: IContextProps) => {
     const { children } = props;
 
@@ -45,11 +49,19 @@ export const AppContextProvider = (props: IContextProps) => {
     ]);
 
     const addNewIssue = (props: IAddNewIssueProps) => {
-        setIssuesList([...issuesList, { ...props.data, id: uuidv4()}]);
+        setIssuesList([...issuesList, { ...props.data, id: uuidv4() }]);
     };
 
     const deleteIssue = (id: string) => {
         setIssuesList(issuesList.filter((issue) => issue.id !== id));
+    };
+
+    const editIssue = (props: IEditIssueProps) => {
+        console.log(props.data)
+        const updatedArray = [...issuesList];
+        const index = updatedArray.findIndex((obj) => obj.id === props.data.id);
+        updatedArray[index] = { ...updatedArray[index], ...props.data };
+        setIssuesList(updatedArray);
     };
 
     return (
@@ -58,7 +70,8 @@ export const AppContextProvider = (props: IContextProps) => {
                 issuesList,
                 setIssuesList,
                 addNewIssue,
-                deleteIssue
+                deleteIssue,
+                editIssue,
             }}
         >
             {children}
@@ -67,13 +80,14 @@ export const AppContextProvider = (props: IContextProps) => {
 };
 
 export const useAppContext = (): IProps => {
-    const { issuesList, setIssuesList, addNewIssue, deleteIssue } = useContext(AppContext);
+    const { issuesList, setIssuesList, addNewIssue, deleteIssue, editIssue } = useContext(AppContext);
 
     return {
         issuesList,
         setIssuesList,
         addNewIssue,
-        deleteIssue
+        deleteIssue,
+        editIssue,
     };
 };
 
@@ -82,4 +96,5 @@ interface IProps {
     setIssuesList: (arg: IIssue[]) => void;
     addNewIssue: (arg: IIssue) => void;
     deleteIssue: (arg: string) => void;
+    editIssue: (arg: IIssue) => void;
 }
