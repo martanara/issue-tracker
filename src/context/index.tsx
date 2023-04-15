@@ -15,28 +15,25 @@ export const AppContextProvider = (props: IContextProps) => {
             id: "1",
             title: "UI broken on Chrome",
             reporter: "Mary Collins",
+            createdDt: "2023-04-03",
             description: "Please fix asap",
-            isOpen: true,
-            isPending: false,
-            isClosed: false,
+            status: "open"
         },
         {
             id: "2",
             title: "Email campaign to cancelled users",
             reporter: "Bob Stevens",
+            createdDt: "2023-04-08",
             description: "Email to be sent out to users who cancelled",
-            isOpen: false,
-            isPending: true,
-            isClosed: false,
+            status: "pending"
         },
         {
             id: "3",
             title: "Issue in design format",
             reporter: "Paul Smith",
+            createdDt: "2023-04-13",
             description: "There is an issue with the design of some components",
-            isOpen: false,
-            isPending: false,
-            isClosed: true,
+            status: "closed"
         },
     ]);
 

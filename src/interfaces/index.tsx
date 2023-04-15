@@ -2,8 +2,9 @@ export interface IIssue {
     id: string;
     title: string;
     reporter: string;
+    createdDt: string;
     description: string;
-    isOpen: boolean;
-    isPending: boolean;
-    isClosed: boolean;
+    status: IStatus;
 }
+
+export type IStatus = "open" | "pending" | "closed"

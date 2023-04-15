@@ -1,0 +1,41 @@
+@import "../../styles/settings.scss";
+
+.table-container {
+    padding: 15px;
+    border: 1px solid $color-gray;
+    border-radius: 5px;
+    box-shadow: 0 0 3px $color-gray;
+
+    table {
+        width: 100%;
+
+        th {
+            padding: 15px;
+            text-align: left;
+        }
+
+        td {
+            border-top: 1px solid $color-gray;
+            padding: 15px;
+        }
+    }
+}
+
+.label {
+  padding: 10px;
+  width: 100px;
+  text-align: center;
+  border-radius: 10%;
+}
+
+.label-open {
+    background-color: $color-baby-blue;
+}
+
+.label-pending {
+    background-color: $color-baby-pink;
+}
+
+.label-closed {
+    background-color: $color-dark-blue;
+}

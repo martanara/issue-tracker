@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import Wrapper from "components/Wrapper";
+import Wrapper from 'components/Wrapper';
 
 const Home = () => {
     return (
