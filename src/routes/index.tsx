@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Layout from "components/Layout/Layout";
 import NotFound from "pages/NotFound";
+import About from "pages/About/About";
 import Issues from "pages/Issues";
 import Home from "pages/Home";
 
@@ -24,6 +25,14 @@ const RoutesConfig = () => {
                     element={
                         <Layout>
                             <Issues />
+                        </Layout>
+                    }
+                />
+                <Route
+                    path="/about"
+                    element={
+                        <Layout>
+                            <About />
                         </Layout>
                     }
                 />
