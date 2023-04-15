@@ -1,9 +1,13 @@
 
 import React from 'react';
 
+import "./styles.scss"
+
 const Footer = () => {
   return (
-    <>Footer</>
+    <div className="footer">
+      <p>&copy; 2023 Trackly. All rights reserved.</p>
+    </div>
   );
 };
 

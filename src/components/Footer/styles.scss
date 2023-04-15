@@ -1,0 +1,12 @@
+@import "../../styles/settings.scss";
+
+.footer {
+    text-align: center;
+    min-height: 80px;
+
+    p {
+      font-size: 15px;
+      font-weight: 300;
+      color: $color-gray;
+    }
+}
