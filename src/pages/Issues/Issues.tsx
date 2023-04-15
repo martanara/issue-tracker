@@ -2,6 +2,8 @@ import React from "react";
 
 import StatusLabel from "components/StatusLabel";
 import Wrapper from "components/Wrapper";
+import Button from "components/Button";
+
 import { useAppContext } from "context";
 
 import "./styles.scss";
@@ -11,6 +13,7 @@ const Issues = () => {
 
     return (
         <Wrapper>
+            <Button>Add issue</Button>
             {issuesList.length !== 0 ? (
                 <div className="table-container">
                     <table>

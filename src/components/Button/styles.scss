@@ -1,0 +1,33 @@
+@import "../../styles/settings.scss";
+
+button {
+    display: inline-block;
+    padding: 15px 70px;
+    margin: 20px 0;
+    border-radius: 40px;
+    color: $color-white;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.5s all ease-out;
+}
+
+.transparent {
+    border: 1px solid $color-white;
+    background-color: $color-dark-blue;
+
+    &:hover {
+        box-shadow: inset 0 0 0 10em rgba(255, 255, 255, 0.3);
+    }
+}
+
+.pink {
+    border: 1px solid $color-dark-pink;
+    background-color: $color-dark-pink;
+
+    &:hover {
+        box-shadow: inset 0 0 0 10em rgba(255, 255, 255, 0.3);
+    }
+}
+
