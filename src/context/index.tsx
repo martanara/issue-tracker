@@ -1,4 +1,7 @@
 import React, { createContext, ReactNode, useContext, useState } from "react";
+
+import { v4 as uuidv4 } from "uuid";
+
 import { IIssue } from "../interfaces";
 
 export const AppContext = createContext<any>(null);
@@ -42,7 +45,11 @@ export const AppContextProvider = (props: IContextProps) => {
     ]);
 
     const addNewIssue = (props: IAddNewIssueProps) => {
-        setIssuesList([...issuesList, { ...props.data }]);
+        setIssuesList([...issuesList, { ...props.data, id: uuidv4()}]);
+    };
+
+    const deleteIssue = (id: string) => {
+        setIssuesList(issuesList.filter((issue) => issue.id !== id));
     };
 
     return (
@@ -51,6 +58,7 @@ export const AppContextProvider = (props: IContextProps) => {
                 issuesList,
                 setIssuesList,
                 addNewIssue,
+                deleteIssue
             }}
         >
             {children}
@@ -59,12 +67,13 @@ export const AppContextProvider = (props: IContextProps) => {
 };
 
 export const useAppContext = (): IProps => {
-    const { issuesList, setIssuesList, addNewIssue } = useContext(AppContext);
+    const { issuesList, setIssuesList, addNewIssue, deleteIssue } = useContext(AppContext);
 
     return {
         issuesList,
         setIssuesList,
         addNewIssue,
+        deleteIssue
     };
 };
 
@@ -72,4 +81,5 @@ interface IProps {
     issuesList: IIssue[];
     setIssuesList: (arg: IIssue[]) => void;
     addNewIssue: (arg: IIssue) => void;
+    deleteIssue: (arg: string) => void;
 }

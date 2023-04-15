@@ -1,6 +1,5 @@
 import React, { BaseSyntheticEvent, useState } from "react";
 
-import CustomDatePicker from "components/CustomDatePicker";
 import TextInput from "components/TextInput/TextInput";
 import TextArea from "components/TextArea/TextArea";
 import Button from "components/Button";
@@ -58,8 +57,6 @@ export const ModalContent = (props: IModalContent) => {
         }
         handleCloseModal();
     };
-
-    console.log(data);
 
     return (
         <div className="modal">

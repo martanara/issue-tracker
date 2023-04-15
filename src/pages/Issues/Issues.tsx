@@ -7,13 +7,14 @@ import Wrapper from "components/Wrapper";
 import { useAppContext } from "context";
 
 import "./styles.scss";
+import SettingsDropdownMenu from "components/SettingsDropdownMenu";
 
 const Issues = () => {
     const { issuesList } = useAppContext();
 
     return (
         <Wrapper>
-            <AddIssueModal />
+            <div className="modal-wrapper"><AddIssueModal /></div>
             {issuesList.length !== 0 ? (
                 <div className="table-wrapper">
                     <div className="table-scroll">
@@ -37,6 +38,9 @@ const Issues = () => {
                                         <td>{item.description}</td>
                                         <td>
                                             <StatusLabel status={item.status} />
+                                        </td>
+                                        <td>
+                                            <SettingsDropdownMenu issueId={item.id}/>
                                         </td>
                                     </tr>
                                 );

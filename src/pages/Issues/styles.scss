@@ -1,5 +1,9 @@
 @import "../../styles/settings.scss";
 
+.modal-wrapper {
+    margin-bottom: 20px;
+}
+
 .table-wrapper {
     padding: 15px;
     border: 1px solid $color-gray;
@@ -12,6 +16,7 @@
         th {
             padding: 15px;
             text-align: left;
+
         }
 
         td {
@@ -19,8 +24,9 @@
             padding: 15px;
         }
     }
+
+    .table-scroll {
+        overflow: auto; 
+    }
 }
 
-.table-scroll {
-    overflow:auto;  
-}
