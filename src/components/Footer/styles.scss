@@ -1,12 +1,15 @@
 @import "../../styles/settings.scss";
 
 .footer {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     min-height: 80px;
 
     p {
-      font-size: 15px;
-      font-weight: 300;
-      color: $color-gray;
+        font-size: 15px;
+        font-weight: 300;
+        color: $color-gray;
+        margin: 0;
     }
 }

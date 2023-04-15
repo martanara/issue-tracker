@@ -1,9 +1,13 @@
-import React from 'react';
+import React from "react";
+
+import Wrapper from "components/Wrapper";
 
 const Issues = () => {
-  return (
-    <>Issues</>
-  );
+    return (
+        <Wrapper>
+            <>Issues</>
+        </Wrapper>
+    );
 };
 
 export default Issues;

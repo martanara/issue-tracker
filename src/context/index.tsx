@@ -10,7 +10,35 @@ interface IContextProps {
 export const AppContextProvider = (props: IContextProps) => {
     const { children } = props;
 
-    const [issuesList, setIssuesList] = useState<IIssue[]>([]);
+    const [issuesList, setIssuesList] = useState<IIssue[]>([
+        {
+            id: "1",
+            title: "UI broken on Chrome",
+            reporter: "Mary Collins",
+            description: "Please fix asap",
+            isOpen: true,
+            isPending: false,
+            isClosed: false,
+        },
+        {
+            id: "2",
+            title: "Email campaign to cancelled users",
+            reporter: "Bob Stevens",
+            description: "Email to be sent out to users who cancelled",
+            isOpen: false,
+            isPending: true,
+            isClosed: false,
+        },
+        {
+            id: "3",
+            title: "Issue in design format",
+            reporter: "Paul Smith",
+            description: "There is an issue with the design of some components",
+            isOpen: false,
+            isPending: false,
+            isClosed: true,
+        },
+    ]);
 
     return (
         <AppContext.Provider

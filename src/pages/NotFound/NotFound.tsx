@@ -1,9 +1,13 @@
-import React from 'react';
+import React from "react";
+
+import Wrapper from "components/Wrapper";
 
 const NotFound = () => {
-  return (
-    <>NotFound</>
-  );
+    return (
+        <Wrapper>
+            <>NotFound</>
+        </Wrapper>
+    );
 };
 
 export default NotFound;
