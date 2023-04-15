@@ -1,0 +1,21 @@
+@import "../../styles/settings.scss";
+
+.label {
+  padding: 10px;
+  width: 100px;
+  text-align: center;
+  border-radius: 10%;
+  color: $color-white;
+}
+
+.label-open {
+    background-color: $color-baby-blue;
+}
+
+.label-pending {
+    background-color: $color-baby-pink;
+}
+
+.label-closed {
+    background-color: $color-green;
+}

@@ -1,13 +1,10 @@
 import React from "react";
 
+import StatusLabel from "components/StatusLabel";
 import Wrapper from "components/Wrapper";
 import { useAppContext } from "context";
-import { IStatus } from "interfaces";
 
 import "./styles.scss";
-interface IStatusLabelProps {
-    status: IStatus;
-}
 
 const Issues = () => {
     const { issuesList } = useAppContext();
@@ -35,7 +32,7 @@ const Issues = () => {
                                         <td>{item.createdDt}</td>
                                         <td>{item.description}</td>
                                         <td>
-                                            <StatusLabel status={item.status}/>
+                                            <StatusLabel status={item.status} />
                                         </td>
                                     </tr>
                                 );
@@ -51,5 +48,3 @@ const Issues = () => {
 };
 
 export default Issues;
-
-const StatusLabel = (props: IStatusLabelProps) => <div className={`label label-${props.status}`}>{props.status}</div>;
