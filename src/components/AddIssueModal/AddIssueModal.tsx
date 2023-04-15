@@ -67,7 +67,6 @@ export const ModalContent = (props: IModalContent) => {
                 <div className="modal-header"></div>
                 <TextInput placeholder="Title" name="title" labelText="Title" value={data?.title} onChange={handleChangeState} />
                 <TextInput placeholder="Reporter" name="reporter" labelText="Reporter" value={data?.reporter} onChange={handleChangeState} />
-                <CustomDatePicker labelText="Created date" onChange={handleChangeState} />
                 <TextArea
                     placeholder="Description"
                     name="description"
