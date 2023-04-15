@@ -1,22 +1,36 @@
 @import "../../styles/settings.scss";
 
+.dropdown-menu-wrapper {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 3;
+}
+
 .modal-wrapper {
     margin-bottom: 20px;
 }
 
+.action-button {
+    cursor: pointer;
+}
+
 .table-wrapper {
+    position: relative;
     padding: 15px;
     border: 1px solid $color-gray;
     border-radius: 5px;
     box-shadow: 0 0 3px $color-gray;
+    width: 100%;
+    margin: 0 auto;
 
     table {
         width: 100%;
+        border-collapse: collapse;
 
         th {
             padding: 15px;
             text-align: left;
-
         }
 
         td {
@@ -26,7 +40,6 @@
     }
 
     .table-scroll {
-        overflow: auto; 
+        overflow-x: auto;
     }
 }
-
