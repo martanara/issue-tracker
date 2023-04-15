@@ -1,32 +1,30 @@
-import React from 'react';
+import React from "react";
 
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
-import './styles.scss';
+import "./styles.scss";
 
 const Navbar = () => {
     return (
-        <div className='navbar'>
-            <ul className='navbar-list'>
-                <li className='navbar-icon'>
-                    <a href='/'>
-                        Trackly
-                    </a>
+        <div className="navbar">
+            <ul className="navbar-list">
+                <li className="navbar-icon">
+                    <NavLink to="/">Trackly</NavLink>
                 </li>
             </ul>
-            <ul className='navbar-list'>
+            <ul className="navbar-list">
                 <li>
-                    <NavLink className={({ isActive }) => (isActive ? 'link-active' : '')} to='/'>
+                    <NavLink className={({ isActive }) => (isActive ? "link-active" : "")} to="/">
                         Home
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink className={({ isActive }) => (isActive ? 'link-active' : '')} to='/issues'>
+                    <NavLink className={({ isActive }) => (isActive ? "link-active" : "")} to="/issues">
                         Issues
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink className={({ isActive }) => (isActive ? 'link-active' : '')} to='/about'>
+                    <NavLink className={({ isActive }) => (isActive ? "link-active" : "")} to="/about">
                         About
                     </NavLink>
                 </li>

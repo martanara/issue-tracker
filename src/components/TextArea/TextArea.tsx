@@ -2,7 +2,7 @@ import React, { ChangeEventHandler } from "react";
 
 import "./styles.scss";
 
-interface ITextInput {
+interface ITextArea {
     placeholder: string;
     labelText: string;
     name: string;
@@ -10,20 +10,19 @@ interface ITextInput {
     onChange: ChangeEventHandler;
 }
 
-const TextInput = (props: ITextInput) => {
+const TextArea = (props: ITextArea) => {
     return (
-        <div className="input-container">
+        <div className="textarea-container">
             <p>{props.labelText}:</p>
-            <input
-                className="input"
+            <textarea
+                className="textarea"
                 name={props.name}
                 value={props.value}
                 onChange={props.onChange}
                 placeholder={props.placeholder}
-                type="textarea"
             />
         </div>
     );
 };
 
-export default TextInput;
+export default TextArea;
