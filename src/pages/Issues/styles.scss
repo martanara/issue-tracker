@@ -1,6 +1,6 @@
 @import "../../styles/settings.scss";
 
-.table-container {
+.table-wrapper {
     padding: 15px;
     border: 1px solid $color-gray;
     border-radius: 5px;
@@ -19,4 +19,8 @@
             padding: 15px;
         }
     }
+}
+
+.table-scroll {
+    overflow:auto;  
 }

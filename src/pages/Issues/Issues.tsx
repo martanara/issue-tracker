@@ -15,7 +15,8 @@ const Issues = () => {
         <Wrapper>
             <AddIssueModal />
             {issuesList.length !== 0 ? (
-                <div className="table-container">
+                <div className="table-wrapper">
+                    <div className="table-scroll">
                     <table>
                         <thead>
                             <tr>
@@ -42,6 +43,7 @@ const Issues = () => {
                             })}
                         </tbody>
                     </table>
+                    </div>
                 </div>
             ) : (
                 <div>No results</div>
