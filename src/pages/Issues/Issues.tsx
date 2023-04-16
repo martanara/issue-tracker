@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Tooltip } from "react-tooltip";
+
 import { AddIssueModal, EditIssueModal } from "components/AddEditIssueModal/AddEditIssueModal";
 import { ConfirmDeleteModal } from "components/ConfirmDeleteModal/ConfirmDeleteModal";
 import StatusDropdownMenu from "components/StatusDropdownMenu";
@@ -17,6 +19,7 @@ const Issues = () => {
             <div className="modal-wrapper">
                 <AddIssueModal />
             </div>
+            <Tooltip id="my-tooltip" className="tooltip" />
             {issuesList.length !== 0 ? (
                 <div className="table-wrapper">
                     <div className="table-scroll">
@@ -36,13 +39,13 @@ const Issues = () => {
                                 {issuesList.map((issue) => {
                                     return (
                                         <tr key={issue.id}>
-                                            <td>
-                                                <p>{issue.title}</p>
-                                            </td>
+                                            <td>{issue.title}</td>
                                             <td>{issue.reporter}</td>
                                             <td>{issue.createdDt}</td>
                                             <td>
-                                                <p>{issue.description}</p>
+                                                <p data-tooltip-id="my-tooltip" data-tooltip-content={issue.description}>
+                                                    {issue.description}
+                                                </p>
                                             </td>
                                             <td>
                                                 <StatusDropdownMenu issue={issue} />

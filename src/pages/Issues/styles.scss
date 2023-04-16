@@ -11,6 +11,17 @@
     margin-bottom: 20px;
 }
 
+.tooltip {
+    position: fixed;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    background-color: $color-light-gray;
+    border: 1px solid $color-white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
 .table-wrapper {
     padding: 15px;
     border: 1px solid $color-gray;
