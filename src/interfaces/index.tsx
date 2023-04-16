@@ -5,11 +5,12 @@ export interface IIssue {
     createdDt: string;
     description: string;
     status: IStatus;
+    [key: string]: any;
 }
 
 export type IStatus = "open" | "pending" | "closed"
 
 export interface IError {
     name: string;
-    content: string;
+    message: string;
 }

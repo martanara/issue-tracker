@@ -70,7 +70,13 @@ export const EditIssueModal = (props: IAddIssueModalProps) => {
 export const ModalContent = (props: IModalContent) => {
     const { handleToggleModal, action, editedRecord, headerText } = props;
 
-    const [data, setData] = useState<IIssue>({ status: "open", createdDt: formatDate(new Date()) } as IIssue);
+    const [data, setData] = useState<IIssue>({
+        status: "open",
+        createdDt: formatDate(new Date()),
+        description: "",
+        reporter: "",
+        title: "",
+    } as IIssue);
     const [error, setError] = useState<IError | undefined>(undefined);
 
     useEffect(() => {
@@ -85,15 +91,31 @@ export const ModalContent = (props: IModalContent) => {
         setData({ ...data, [name]: value || "" } as IIssue);
     };
 
+    const validate = () => {
+        let validated = true;
+        const keys = Object.keys(data);
+
+        keys.forEach((key) => {
+            if (!data[key]) {
+                setError({
+                    name: data[key],
+                    message: `${key.charAt(0).toUpperCase() + key.slice(1)} is required`,
+                });
+                validated = false;
+            }
+        });
+
+        return validated;
+    };
+
     const handleSubmitIssue = () => {
-        if (data.title && data.reporter) {
+        if (validate()) {
+            setError(undefined);
             action({ data });
-        } else
-            setError({
-                name: "title",
-                content: "This field is required",
-            });
-        handleCloseModal();
+            handleCloseModal();
+        } else {
+            return;
+        }
     };
 
     return (
@@ -115,6 +137,7 @@ export const ModalContent = (props: IModalContent) => {
                     value={data?.description}
                     onChange={handleChangeState}
                 />
+                <div className="add-edit-modal-error">{error?.message}</div>
                 <div className="add-edit-modal-footer">
                     <Button text="Cancel" className="dark-blue" onClick={handleCloseModal} outline />
                     <Button text="Save changes" onClick={handleSubmitIssue} />

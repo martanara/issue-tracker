@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-import { TbTrash, TbExclamationCircle } from "react-icons/tb";
+import { TbTrash } from "react-icons/tb";
+import { AiOutlineExclamationCircle } from "react-icons/ai";
 
 import Button from "components/Button";
 
@@ -52,7 +53,7 @@ export const ModalContent = (props: IModalContent) => {
     return (
         <div className="confirm-modal">
             <div className="confirm-modal-content">
-                <TbExclamationCircle size={100} />
+                <AiOutlineExclamationCircle size={100} />
                 <div className="confirm-modal-message">
                     <p>{headerText}</p>
                 </div>
