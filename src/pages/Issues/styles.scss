@@ -13,6 +13,7 @@
 
 .tooltip {
     position: absolute;
+    max-width: 300px;
     z-index: 1;
     padding: 10px;
     background-color: $color-light-gray;
@@ -43,7 +44,6 @@
             padding: 15px;
 
             p {
-                position: relative;
                 overflow: hidden;
                 text-overflow: ellipsis;
                 display: -webkit-box;

@@ -43,9 +43,13 @@ const Issues = () => {
                                             <td>{issue.reporter}</td>
                                             <td>{issue.createdDt}</td>
                                             <td>
-                                                <p data-tooltip-id="my-tooltip" data-tooltip-content={issue.description}>
-                                                    {issue.description}
-                                                </p>
+                                                {issue.description.length > 100 ? (
+                                                    <p data-tooltip-id="my-tooltip" data-tooltip-content={issue.description}>
+                                                        {issue.description}
+                                                    </p>
+                                                ) : (
+                                                    issue.description
+                                                )}
                                             </td>
                                             <td>
                                                 <StatusDropdownMenu issue={issue} />
