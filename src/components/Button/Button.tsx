@@ -4,7 +4,7 @@ import "./styles.scss";
 
 interface IButtonProps {
     text: string;
-    className: "dark-blue" | "hot-pink";
+    className: "dark-blue" | "hot-pink" | "white-outline";
     onClick: MouseEventHandler;
     type?: string;
     outline?: boolean;
