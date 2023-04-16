@@ -36,16 +36,18 @@ const Issues = () => {
                                 {issuesList.map((issue) => {
                                     return (
                                         <tr key={issue.id}>
-                                            <td>{issue.title}</td>
+                                            <td>
+                                                <p>{issue.title}</p>
+                                            </td>
                                             <td>{issue.reporter}</td>
                                             <td>{issue.createdDt}</td>
-                                            <td>{issue.description}</td>
+                                            <td>
+                                                <p>{issue.description}</p>
+                                            </td>
                                             <td>
                                                 <StatusDropdownMenu issue={issue} />
                                             </td>
-                                            <td>
-                                                <EditIssueModal editedRecord={issue} />
-                                            </td>
+                                            <td>{issue.status !== "closed" && <EditIssueModal editedRecord={issue} />}</td>
                                             <td>
                                                 <ConfirmDeleteModal issueId={issue.id} />
                                             </td>

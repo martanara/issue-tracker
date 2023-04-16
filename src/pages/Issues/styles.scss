@@ -31,6 +31,14 @@
         td {
             border-top: 1px solid $color-gray;
             padding: 15px;
+
+            p {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3;
+            }
         }
     }
 
