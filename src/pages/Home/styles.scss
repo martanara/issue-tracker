@@ -41,12 +41,18 @@
 
     .splash-message {
         width: 600px;
+        padding: 0 30px;
 
         .splash-message-title {
             font-size: 40px;
+            margin: 0;
 
             span {
                 font-weight: 700;
+            }
+
+            @media (max-width: 768px) {
+                font-size: 30px;
             }
         }
 
@@ -55,12 +61,20 @@
             font-size: 25px;
             font-weight: 300;
             line-height: 1.6;
+
+            @media (max-width: 768px) {
+                font-size: 20px;
+            }
         }
 
         .splash-message-buttons {
             display: flex;
             flex-direction: row;
             gap: 30px;
+
+            @media (max-width: 768px) {
+                flex-direction: column;
+            }
         }
 
         &::before {
@@ -90,6 +104,10 @@
             opacity: 0.3;
             z-index: -1;
             transition: all 0.6s ease;
+        }
+
+        @media (max-width: 768px) {
+            width: 400px;
         }
     }
 
