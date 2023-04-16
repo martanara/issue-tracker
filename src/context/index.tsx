@@ -57,7 +57,6 @@ export const AppContextProvider = (props: IContextProps) => {
     };
 
     const editIssue = (props: IEditIssueProps) => {
-        console.log(props.data)
         const updatedArray = [...issuesList];
         const index = updatedArray.findIndex((obj) => obj.id === props.data.id);
         updatedArray[index] = { ...updatedArray[index], ...props.data };

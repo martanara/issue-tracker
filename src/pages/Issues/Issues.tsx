@@ -2,7 +2,7 @@ import React from "react";
 
 import { AddIssueModal, EditIssueModal } from "components/AddEditIssueModal/AddEditIssueModal";
 import { ConfirmDeleteModal } from "components/ConfirmDeleteModal/ConfirmDeleteModal";
-import StatusLabel from "components/StatusLabel";
+import StatusDropdownMenu from "components/StatusDropdownMenu";
 import Wrapper from "components/Wrapper";
 
 import { useAppContext } from "context";
@@ -41,7 +41,7 @@ const Issues = () => {
                                             <td>{issue.createdDt}</td>
                                             <td>{issue.description}</td>
                                             <td>
-                                                <StatusLabel status={issue.status} />
+                                                <StatusDropdownMenu issue={issue} />
                                             </td>
                                             <td>
                                                 <EditIssueModal editedRecord={issue} />

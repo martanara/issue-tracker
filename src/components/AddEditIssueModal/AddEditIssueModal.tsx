@@ -8,7 +8,7 @@ import Button from "components/Button";
 
 import { formatDate } from "utils/formatDate";
 import { useAppContext } from "context";
-import { IIssue } from "interfaces";
+import { IError, IIssue } from "interfaces";
 
 import "./styles.scss";
 
@@ -71,6 +71,7 @@ export const ModalContent = (props: IModalContent) => {
     const { handleToggleModal, action, editedRecord, headerText } = props;
 
     const [data, setData] = useState<IIssue>({ status: "open", createdDt: formatDate(new Date()) } as IIssue);
+    const [error, setError] = useState<IError | undefined>(undefined);
 
     useEffect(() => {
         editedRecord && setData(editedRecord);
@@ -87,7 +88,11 @@ export const ModalContent = (props: IModalContent) => {
     const handleSubmitIssue = () => {
         if (data.title && data.reporter) {
             action({ data });
-        }
+        } else
+            setError({
+                name: "title",
+                content: "This field is required",
+            });
         handleCloseModal();
     };
 

@@ -8,3 +8,8 @@ export interface IIssue {
 }
 
 export type IStatus = "open" | "pending" | "closed"
+
+export interface IError {
+    name: string;
+    content: string;
+}
