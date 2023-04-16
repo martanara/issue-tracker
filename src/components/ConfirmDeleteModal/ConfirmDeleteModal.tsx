@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { TbTrash } from "react-icons/tb";
+import { TbTrash, TbExclamationCircle } from "react-icons/tb";
 
 import Button from "components/Button";
 
@@ -35,7 +35,7 @@ export const ConfirmDeleteModal = (props: IConfirmDeleteModalProps) => {
                     handleToggleModal={(modalOpen) => setModalOpen(modalOpen)}
                     modalOpen={modalOpen}
                     action={addNewIssue}
-                    headerText="Are you sure?"
+                    headerText="Are you sure you want to delete this issue?"
                 />
             )}
         </>
@@ -50,12 +50,15 @@ export const ModalContent = (props: IModalContent) => {
     const handleCloseModal = () => handleToggleModal(false);
 
     return (
-        <div className="modal">
-            <div className="modal-content">
-                <div className="modal-header">{headerText}</div>
-                <div className="modal-footer">
-                    <Button text="Cancel" className="dark-blue" onClick={handleCloseModal} />
-                    <Button text="Proceed" className="dark-blue" onClick={() => deleteIssue(issueId)} />
+        <div className="confirm-modal">
+            <div className="confirm-modal-content">
+                <TbExclamationCircle size={100} />
+                <div className="confirm-modal-message">
+                    <p>{headerText}</p>
+                </div>
+                <div className="confirm-modal-footer">
+                    <Button text="Cancel" className="dark-blue" outline onClick={handleCloseModal} />
+                    <Button text="Proceed" className="hot-pink" onClick={() => deleteIssue(issueId)} />
                 </div>
             </div>
         </div>

@@ -1,17 +1,10 @@
 @import "../../styles/settings.scss";
 
-.textarea-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 90%;
-}
-
-.textarea {
+textarea {
     background: $color-white;
     border: 1px solid $color-black;
     padding: 10px;
     border-radius: 5px;
-    width: 300px;
+    min-width: 400px;
     height: 100px;
 }

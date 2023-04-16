@@ -13,9 +13,10 @@ interface ITextArea {
 const TextArea = (props: ITextArea) => {
     return (
         <div className="textarea-container">
-            <p>{props.labelText}:</p>
+            <div>
+                <p>{props.labelText}:</p>
+            </div>
             <textarea
-                className="textarea"
                 name={props.name}
                 value={props.value}
                 onChange={props.onChange}

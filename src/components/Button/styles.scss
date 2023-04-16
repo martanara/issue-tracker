@@ -15,17 +15,27 @@ button {
 }
 
 .dark-blue {
-    border: 1px solid $color-white;
+    border: 2px solid $color-dark-blue;
     background-color: $color-dark-blue;
+
+    &.outline {
+        background-color: transparent;
+        color: $color-dark-blue;
+    }
 
     &:hover {
         box-shadow: inset 0 0 0 10em rgba(255, 255, 255, 0.3);
     }
 }
 
-.pink {
-    border: 1px solid $color-dark-pink;
-    background-color: $color-dark-pink;
+.hot-pink {
+    border: 2px solid $color-hot-pink;
+    background-color: $color-hot-pink;
+
+    &.outline {
+        background-color: transparent;
+        color: $color-hot-pink;
+    }
 
     &:hover {
         box-shadow: inset 0 0 0 10em rgba(255, 255, 255, 0.3);

@@ -12,16 +12,13 @@ interface ITextInput {
 
 const TextInput = (props: ITextInput) => {
     return (
-        <div className="input-container">
-            <p>{props.labelText}:</p>
-            <input
-                className="input"
-                name={props.name}
-                value={props.value}
-                onChange={props.onChange}
-                placeholder={props.placeholder}
-                type="textarea"
-            />
+        <div>
+            <div>
+                <p>{props.labelText}:</p>
+            </div>
+            <div>
+                <input name={props.name} value={props.value} onChange={props.onChange} placeholder={props.placeholder} type="text" />
+            </div>
         </div>
     );
 };

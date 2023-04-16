@@ -92,9 +92,9 @@ export const ModalContent = (props: IModalContent) => {
     };
 
     return (
-        <div className="modal">
-            <div className="modal-content">
-                <div className="modal-header">{headerText}</div>
+        <div className="add-edit-modal">
+            <div className="add-edit-modal-content">
+                <div className="add-edit-modal-header">{headerText}</div>
                 <TextInput placeholder="Title" name="title" labelText="Title" value={data?.title} onChange={handleChangeState} />
                 <TextInput
                     placeholder="Reporter"
@@ -110,9 +110,9 @@ export const ModalContent = (props: IModalContent) => {
                     value={data?.description}
                     onChange={handleChangeState}
                 />
-                <div className="modal-footer">
-                    <Button text="Cancel" className="dark-blue" onClick={handleCloseModal} />
-                    <Button text="Save changes" className="dark-blue" onClick={handleSubmitIssue} />
+                <div className="add-edit-modal-footer">
+                    <Button text="Cancel" className="dark-blue" onClick={handleCloseModal} outline />
+                    <Button text="Save changes" onClick={handleSubmitIssue} />
                 </div>
             </div>
         </div>
