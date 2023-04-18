@@ -12,14 +12,16 @@ const About = () => {
             threshold: 0.5,
         });
 
-        paragraphRefs.current.forEach((ref) => {
+        const currentParagraphRefs = paragraphRefs.current;
+
+        currentParagraphRefs.forEach((ref) => {
             if (ref) {
                 observer.observe(ref);
             }
         });
 
         return () => {
-            paragraphRefs.current.forEach((ref) => {
+            currentParagraphRefs.forEach((ref) => {
                 if (ref) {
                     observer.unobserve(ref);
                 }
