@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 import { BiSortDown } from "react-icons/bi";
-import { useAppContext } from "context";
-import { IIssue } from "interfaces";
+import { useAppContext } from "context/context";
+import { IIssue } from "interfaces/interfaces";
 
 import "./styles.scss";
 
@@ -21,6 +21,7 @@ const SortingHeader = (props: ISortingHeaderProps) => {
         if (name === sortColumn) setIsAscending(!isAscending);
 
         let sortBy = "";
+
         switch (name) {
             case "Created date":
                 sortBy = "createdDt";
@@ -29,6 +30,7 @@ const SortingHeader = (props: ISortingHeaderProps) => {
                 sortBy = name.toLowerCase();
                 break;
         }
+
         const sortedIssues = [...issuesList].sort((a: IIssue, b: IIssue) => {
             const x = a[sortBy].toLowerCase();
             const y = b[sortBy].toLowerCase();

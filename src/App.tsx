@@ -1,6 +1,6 @@
 import React from "react";
 
-import { AppContextProvider } from "./context";
+import { AppContextProvider } from "./context/context";
 import RoutesConfig from "routes";
 
 function App() {

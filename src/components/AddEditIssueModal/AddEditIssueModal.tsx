@@ -7,8 +7,8 @@ import TextArea from "components/TextArea/TextArea";
 import Button from "components/Button";
 
 import { formatDate } from "utils/formatDate";
-import { useAppContext } from "context";
-import { IError, IIssue } from "interfaces";
+import { useAppContext } from "context/context";
+import { IError, IIssue } from "interfaces/interfaces";
 
 import "./styles.scss";
 
@@ -51,7 +51,7 @@ export const EditIssueModal = (props: IAddIssueModalProps) => {
 
     return (
         <>
-            <div className={"action-button"} onClick={() => setModalOpen(true)}>
+            <div className="action-button" onClick={() => setModalOpen(true)}>
                 <TbEdit />
             </div>
             {modalOpen && (

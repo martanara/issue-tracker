@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 import StatusLabel from "components/StatusLabel";
 
-import { IIssue, IStatus } from "interfaces";
-import { useAppContext } from "context";
+import { IIssue, IStatus } from "interfaces/interfaces";
+import { useAppContext } from "context/context";
 
 import "./styles.scss";
 

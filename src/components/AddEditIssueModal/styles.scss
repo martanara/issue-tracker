@@ -14,7 +14,7 @@
 
     .add-edit-modal-header {
         font-size: 30px;
-        margin-bottom: 10px
+        margin-bottom: 10px;
     }
 
     .add-edit-modal-content {
@@ -32,7 +32,7 @@
         padding: 3px;
         height: 20px;
         font-size: 12px;
-        color: red;
+        color: $color-warning;
     }
 
     .add-edit-modal-footer {

@@ -20,7 +20,7 @@ Button.defaultProps = {
     text: "Button",
     className: "hot-pink",
     onClick: () => {},
-    outline: false
+    outline: false,
 };
 
 export default Button;

@@ -5,7 +5,7 @@ import { AiOutlineExclamationCircle } from "react-icons/ai";
 
 import Button from "components/Button";
 
-import { useAppContext } from "context";
+import { useAppContext } from "context/context";
 
 import "./styles.scss";
 

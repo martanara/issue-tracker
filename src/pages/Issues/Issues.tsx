@@ -7,9 +7,9 @@ import { ConfirmDeleteModal } from "components/ConfirmDeleteModal/ConfirmDeleteM
 import StatusDropdownMenu from "components/StatusDropdownMenu";
 import SortingHeader from "components/SortingHeader";
 import Wrapper from "components/Wrapper";
-import { IIssue } from "interfaces";
 
-import { useAppContext } from "context";
+import { IIssue } from "interfaces/interfaces";
+import { useAppContext } from "context/context";
 
 import "./styles.scss";
 

@@ -16,12 +16,7 @@ const TextArea = (props: ITextArea) => {
             <div>
                 <p>{props.labelText}:</p>
             </div>
-            <textarea
-                name={props.name}
-                value={props.value}
-                onChange={props.onChange}
-                placeholder={props.placeholder}
-            />
+            <textarea name={props.name} value={props.value} onChange={props.onChange} placeholder={props.placeholder} />
         </div>
     );
 };

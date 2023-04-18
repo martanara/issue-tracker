@@ -2,7 +2,7 @@ import React, { createContext, ReactNode, useContext, useState } from "react";
 
 import { v4 as uuidv4 } from "uuid";
 
-import { IIssue } from "../interfaces";
+import { IIssue } from "../interfaces/interfaces";
 
 export const AppContext = createContext<any>(null);
 

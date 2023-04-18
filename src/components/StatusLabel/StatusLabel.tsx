@@ -1,6 +1,6 @@
 import React from "react";
 
-import { IStatus } from "interfaces";
+import { IStatus } from "interfaces/interfaces";
 
 import "./styles.scss";
 
