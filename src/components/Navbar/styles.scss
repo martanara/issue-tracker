@@ -47,16 +47,26 @@
 
             &.show-menu {
                 display: flex;
+                position: fixed;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                background-color: $color-dark-blue;
+                text-align: center;
+                margin: 0;
+                padding: 0;
+                z-index: 2;
             }
         }
     }
 
-    .navbar-icon {
+    .navbar-logo {
         a {
             font-weight: 700;
             font-size: 20px;
             color: $color-white;
             padding: 0;
+            letter-spacing: 2px;
         }
     }
 

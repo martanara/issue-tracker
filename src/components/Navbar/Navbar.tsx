@@ -13,7 +13,7 @@ const Navbar = () => {
 
     return (
         <div className="navbar">
-            <div className="navbar-icon">
+            <div className="navbar-logo">
                 <NavLink to="/">Trackly</NavLink>
             </div>
             <div className="navbar-toggle" onClick={toggleMenu}>
