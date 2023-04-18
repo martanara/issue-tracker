@@ -8,6 +8,7 @@
     transition: all 1s;
     overflow: hidden;
     text-align: center;
+    z-index: 1;
 
     &.label-open {
         color: $color-baby-blue;
