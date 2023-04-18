@@ -19,9 +19,10 @@
             left: 0;
             width: 100%;
             height: 100%;
+            border-radius: 25px;
             background-color: $color-baby-blue;
             transition: all 2s;
-            z-index: -1;
+            z-index: -2;
             transform: translateX(-100%);
         }
     }
@@ -38,7 +39,7 @@
             height: 100%;
             background-color: $color-baby-pink;
             transition: all 2s;
-            z-index: 2;
+            z-index: -2;
             transform: translateX(-100%);
         }
     }
