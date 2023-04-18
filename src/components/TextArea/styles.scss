@@ -5,6 +5,10 @@ textarea {
     border: 1px solid $color-black;
     padding: 10px;
     border-radius: 5px;
-    min-width: 400px;
     height: 100px;
+    width: 400px;
+
+    @media (max-width: 768px) {
+        width: 200px;
+    }
 }
