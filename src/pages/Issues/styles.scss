@@ -57,3 +57,16 @@
         overflow-x: auto;
     }
 }
+
+
+.header-button {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3px;
+
+    .icon {
+      padding-top: 2px;
+    }
+}
